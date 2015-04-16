@@ -17,9 +17,9 @@ Dotenv::load(__DIR__.'/../');
 
 $app = new Laravel\Lumen\Application;
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
