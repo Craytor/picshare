@@ -11,6 +11,4 @@
 |
 */
 
-$app->get('/', function() use ($app) {
-	return $app->welcome();
-});
+$app->get('/', ['as' => 'home', 'uses' => 'App\Http\Controllers\HomeController@fire']);
