@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller {
 
-	public function fire()
+	public function index()
 	{
 		return response()->json(['Hello there!']);
 	}

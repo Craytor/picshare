@@ -11,4 +11,8 @@
 |
 */
 
-$app->get('/', ['as' => 'home', 'uses' => 'App\Http\Controllers\HomeController@fire']);
+$app->get('/', 'App\Http\Controllers\HomeController@index');
+
+$app->post('/', 'App\Http\Controllers\ImageController@postImage');
+
+$app->get('/{id}', 'App\Http\Controllers\ImageController@getImage');
