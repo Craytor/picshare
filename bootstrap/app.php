@@ -10,7 +10,7 @@ Dotenv::load(__DIR__.'/../');
 |--------------------------------------------------------------------------
 |
 | Here we will load the environment and create the application instance
-| that servers as the central piece of the framework. We'll use this
+| that serves as the central piece of this framework. We'll use this
 | application as an "IoC" container and router for this framework.
 |
 */
@@ -33,13 +33,13 @@ $app->withEloquent();
 */
 
 $app->singleton(
-	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'App\Exceptions\Handler'
+    'Illuminate\Contracts\Debug\ExceptionHandler',
+    'App\Exceptions\Handler'
 );
 
 $app->singleton(
-	'Illuminate\Contracts\Console\Kernel',
-	'App\Console\Kernel'
+    'Illuminate\Contracts\Console\Kernel',
+    'App\Console\Kernel'
 );
 
 /*
