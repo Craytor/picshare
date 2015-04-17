@@ -2,7 +2,8 @@
 
 namespace App\Repositories\Images;
 
-use App\Models\Images;
+use App\Models\Image;
+use Hashids\Hashids;
 
 class ImagesRepository implements ImagesRepositoryInterface
 {
@@ -15,7 +16,7 @@ class ImagesRepository implements ImagesRepositoryInterface
         $this->url = $url;
     }
 
-    public function save(File $file)
+    public function save($file)
     {
         $image = file_get_contents($file->getPathname());
         $hash = sha1($image);
@@ -43,23 +44,23 @@ class ImagesRepository implements ImagesRepositoryInterface
             return $model->delete();
         }
     }
-    protected function url($id)
-    {
-        $id = $this->encode($id);
-        return $this->url.'/'.$id;
-    }
-    protected function encode($id)
-    {
-        return $this->hash->encode($id);
-    }
-    protected function decode($id)
-    {
-        if (is_numeric($id)) {
-            return (int) $id;
-        } else {
-            return $this->hash->decode($id);
-        }
-    }
+    // protected function url($id)
+    // {
+    //     $id = $this->encode($id);
+    //     return $this->url.'/'.$id;
+    // }
+    // protected function encode($id)
+    // {
+    //     return $this->hash->encode($id);
+    // }
+    // protected function decode($id)
+    // {
+    //     if (is_numeric($id)) {
+    //         return (int) $id;
+    //     } else {
+    //         return $this->hash->decode($id);
+    //     }
+    // }
 
     
 }

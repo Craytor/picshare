@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 
+// use App\Repositories\Images\ImagesRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -12,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // $this->app->singleton('App\Repositories\Images\ImagesRepositoryInterface', function ($app) {
+        //     return $app->make(ImagesRepository::class);
+        // });
     }
 }
