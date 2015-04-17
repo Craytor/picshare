@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Lumen</title>
+        <title>Picshare</title>
 
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -10,10 +10,11 @@
                 padding: 0;
                 width: 100%;
                 height: 100%;
-                color: #B0BEC5;
+                color: #fff;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-color: #3498db;
             }
 
             .container {
@@ -32,6 +33,10 @@
                 margin-bottom: 40px;
             }
 
+            .title small {
+                font-size: 40px;
+            }
+
             .quote {
                 font-size: 24px;
             }
@@ -40,7 +45,11 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Image-Sharing</div>
+                <div class="title">
+                    Picshare! <br>
+                    <small>announced "picture"</small>
+
+                </div>
             </div>
         </div>
     </body>
