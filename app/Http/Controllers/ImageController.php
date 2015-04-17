@@ -16,9 +16,17 @@ class ImageController extends Controller {
         $this->hash = new Hashids('image', 6);
     }
 
-	public function getImage($id)
+	public function getImage($hash)
 	{
-		// to come
+		$id = $this->hash->decode($hash);
+		
+		if($model = Image::where('id', $id)->first()) {
+			$mime = $model->mime;
+			$image = $model->image;
+
+			return response($image, 200)->header('Content-Type', $mime);
+		}
+
 	}
 
 	public function postImage()

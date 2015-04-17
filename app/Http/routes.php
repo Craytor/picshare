@@ -15,4 +15,4 @@ $app->get('/', 'App\Http\Controllers\HomeController@index');
 
 $app->post('/', 'App\Http\Controllers\ImageController@postImage');
 
-$app->get('/{id}', 'App\Http\Controllers\ImageController@getImage');
+$app->get('/{hash}', 'App\Http\Controllers\ImageController@getImage');
