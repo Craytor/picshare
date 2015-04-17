@@ -8,7 +8,7 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		return response()->json(['Hello there!']);
+		return view('landing');
 	}
 
 }

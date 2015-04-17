@@ -57,7 +57,7 @@ class ImageController extends Controller {
         }
 
         if (\Request::input('sharex')) {
-            return response($this->url, 'text/plain');
+            return response($this->url, 200)->header('Content-Type', 'text/plain');
         }
         return response(['message'  => 'Image uploaded successfully', 'url' => $this->url]);
 	}
