@@ -16,6 +16,7 @@ class CreateImagesTable extends Migration {
 		{
 		    $table->increments('id');
 		    $table->string('hash')->unique();
+		    $table->string('name');
 		    $table->text('mime');
 		    $table->timestamps();
 

@@ -23,8 +23,16 @@ class ImageController extends Controller {
 		if($model = Image::where('id', $id)->first()) {
 			$mime = $model->mime;
 			$image = $model->image;
+            $name = $model->name;
 
-			return response($image, 200)->header('Content-Type', $mime);
+            $data = array(
+                'image' => $image,
+                'mime'  => $mime,
+                'hash'  => $hash,
+                'name'  => $name
+            );
+
+			return view('image')->with($data);
 		}
 
 	}
@@ -43,13 +51,15 @@ class ImageController extends Controller {
             return response(['message'  => 'Only images are allowed'], 415);
         }
 
+        $name = substr($image->getClientOriginalName(), 0, 225);
         $mime = $image->getMimeType();
         $image = file_get_contents($image->getPathname());
 		$hash = sha1($image . time());
 		$model = Image::where('hash', $hash)->first();
 
+
 		if (!$model) {
-            $model = Image::create(['hash' => $hash, 'image' => $image, 'mime' => $mime]);
+            $model = Image::create(['hash' => $hash, 'image' => $image, 'mime' => $mime, 'name' => $name]);
         }
 
         if ($model) {
