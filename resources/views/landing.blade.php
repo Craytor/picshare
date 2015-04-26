@@ -47,7 +47,7 @@
             <div class="content">
                 <div class="title">
                     Picshare! <br>
-                    <small>announced "picture"</small>
+                    <small>announced "picture" &nbsp;</small>
 
                 </div>
             </div>
