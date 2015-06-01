@@ -1,5 +1,5 @@
 ## Picshare (announced picture)
-
 Picshare was created by, and is maintained by [Tyler Youschak](http://tjyouschak.me), and is a picture sharing platform that utilizes [Lumen](http://lumen.laravel.com/docs), a micro php framework built by Laravel.
 
-More documentation will come in the future...
+#### Usuage
+To use Picshare, you must have a program that can post images to a url, which will be the url that you are running Picshare. A program that works good is Sharex. Configuration for Sharex is quite simple, all you have to do is enter the url, in the image field type image, and then make sure you add a field of sharex and set it equal to 1. The only thing this does is makes it so that when it returns the url to the image, it is in plain text and not JSON. As for now, I know of no other programs that are complatible. If you find one that is compatible please open an issue, and I will add it to the list!
